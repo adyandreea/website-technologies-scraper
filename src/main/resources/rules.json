@@ -24,15 +24,15 @@
     "headers": null,
     "metaGenerator": null,
     "scriptSrc": "(?i)/wp-content/plugins/woocommerce/",
-    "htmlBody": "(?i)woocommerce-page"
+    "htmlBody": "(?i)woocommerce-page|woocommerce-no-js"
   },
   {
     "name": "React",
     "category": "JavaScript Libraries",
     "headers": null,
     "metaGenerator": null,
-    "scriptSrc": null,
-    "htmlBody": "(?i)data-reactroot|_reactListening"
+    "scriptSrc": "(?i)react(\\.production|\\.development)?\\.js",
+    "htmlBody": "(?i)data-reactroot|_reactListening|__NEXT_DATA__"
   },
   {
     "name": "Cloudflare",
@@ -52,5 +52,126 @@
     "metaGenerator": null,
     "scriptSrc": "(?i)googletagmanager\\.com/gtm\\.js",
     "htmlBody": "(?i)gtm\\.start"
+  },
+  {
+    "name": "jQuery",
+    "category": "JavaScript Libraries",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)jquery(-[0-9\\.]+)?(\\.min)?\\.js",
+    "htmlBody": null
+  },
+  {
+    "name": "Elementor",
+    "category": "Page Builders",
+    "headers": null,
+    "metaGenerator": "(?i)Elementor",
+    "scriptSrc": "(?i)/wp-content/plugins/elementor",
+    "htmlBody": "(?i)elementor-element"
+  },
+  {
+    "name": "Bootstrap",
+    "category": "UI Frameworks",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)bootstrap(\\.bundle)?(\\.min)?\\.js",
+    "htmlBody": "(?i)bootstrap(\\.min)?\\.css"
+  },
+  {
+    "name": "Google Analytics",
+    "category": "Analytics",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)(google-analytics\\.com/analytics\\.js|googletagmanager\\.com/gtag/js)",
+    "htmlBody": "(?i)ga\\('create'|gtag\\('config'"
+  },
+  {
+    "name": "WPBakery",
+    "category": "Page Builders",
+    "headers": null,
+    "metaGenerator": "(?i)WPBakery",
+    "scriptSrc": "(?i)/wp-content/plugins/js_composer/",
+    "htmlBody": "(?i)vc_row"
+  },
+  {
+    "name": "Divi",
+    "category": "Page Builders",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)/wp-content/themes/Divi/",
+    "htmlBody": "(?i)et_pb_section"
+  },
+  {
+    "name": "Astra",
+    "category": "WordPress Themes",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)/wp-content/themes/astra/",
+    "htmlBody": "(?i)astra-theme"
+  },
+  {
+    "name": "Slick Slider",
+    "category": "JavaScript Libraries",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)slick(\\.min)?\\.js",
+    "htmlBody": null
+  },
+  {
+    "name": "Swiper",
+    "category": "JavaScript Libraries",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)swiper(-bundle)?(\\.min)?\\.js",
+    "htmlBody": "(?i)swiper-container|swiper-wrapper"
+  },
+  {
+    "name": "Font Awesome",
+    "category": "Font Scripts",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)fontawesome|fontawesome-all|fontawesome-shims",
+    "htmlBody": "(?i)class=\"[^\"]*\\bfa[srbld]?\\b|font-awesome"
+  },
+  {
+    "name": "Nginx",
+    "category": "Web Servers",
+    "headers": {
+      "Server": "(?i)nginx"
+    },
+    "metaGenerator": null,
+    "scriptSrc": null,
+    "htmlBody": null
+  },
+  {
+    "name": "Apache",
+    "category": "Web Servers",
+    "headers": {
+      "Server": "(?i)apache"
+    },
+    "metaGenerator": null,
+    "scriptSrc": null,
+    "htmlBody": null
+  },
+  {
+    "name": "PHP",
+    "category": "Programming Languages",
+    "headers": {
+      "X-Powered-By": "(?i)php",
+      "Set-Cookie": "(?i)PHPSESSID"
+    },
+    "metaGenerator": null,
+    "scriptSrc": null,
+    "htmlBody": null
+  },
+  {
+    "name": "LiteSpeed",
+    "category": "Web Servers",
+    "headers": {
+      "Server": "(?i)litespeed"
+    },
+    "metaGenerator": null,
+    "scriptSrc": null,
+    "htmlBody": null
   }
 ]
