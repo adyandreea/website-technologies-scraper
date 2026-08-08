@@ -1,4 +1,4 @@
-# Website Technologies Scraper
+<h1 align="center"><strong>Website Technologies Scraper</h1>
 
 Website Technologies Scraper is an application for detecting web technologies on domains, built with Spring Boot and Jsoup
 
