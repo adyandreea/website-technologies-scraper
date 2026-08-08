@@ -38,7 +38,13 @@ public class ScraperRunner implements CommandLineRunner {
         List<DomainResultDTO> results = scraperRunnerService.processAllDomains(domains, rules);
 
         long endTime = System.currentTimeMillis();
+
+        int totalTechnologiesFound = results.stream()
+                .mapToInt(DomainResultDTO::getDetectedTechnologiesCount)
+                .sum();
+
         System.out.println("Scan completed in " + (endTime - startTime) / 1000 + " seconds.");
+        System.out.println("Total technologies detected across all domains: " + totalTechnologiesFound);
 
         ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
         objectMapper.writeValue(new File("results.json"), results);
