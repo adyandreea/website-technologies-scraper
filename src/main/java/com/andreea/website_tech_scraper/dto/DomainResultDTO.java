@@ -7,14 +7,17 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * Domain result DTO.
+ */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class DomainResult {
+public class DomainResultDTO {
     private String domain;
     private String status;
     private String errorMessage;
     private int detectedTechnologiesCount;
-    private List<TechnologyDetection> technologies;
+    private List<TechnologyDetectionDTO> technologies;
 }

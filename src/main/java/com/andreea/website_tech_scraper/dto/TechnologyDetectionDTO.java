@@ -5,12 +5,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
+/**
+ * Technology detection DTO.
+ */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class DetectionEvidence {
-    private String location;
-    private String key;
-    private String matchedSnippet;
+public class TechnologyDetectionDTO {
+    private String name;
+    private String category;
+    private List<DetectionEvidenceDTO> detectionEvidence;
 }

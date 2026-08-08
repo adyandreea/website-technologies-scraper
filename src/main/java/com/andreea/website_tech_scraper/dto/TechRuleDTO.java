@@ -1,18 +1,22 @@
 package com.andreea.website_tech_scraper.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.util.Map;
 
+/**
+ * Technology rule DTO.
+ */
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class TechnologyDetection {
+public class TechRuleDTO {
     private String name;
     private String category;
-    private List<DetectionEvidence> detectionEvidence;
+    private Map<String, String> headers;
+    private String metaGenerator;
+    private String scriptSrc;
+    private String htmlBody;
 }
