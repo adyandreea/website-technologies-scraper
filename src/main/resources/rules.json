@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Shopify",
+    "category": "Ecommerce",
+    "headers": {
+      "X-Shopify-Stage": ".*",
+      "Server": "(?i)shopify"
+    },
+    "metaGenerator": "(?i)shopify",
+    "scriptSrc": "(?i)cdn\\.shopify\\.com",
+    "htmlBody": "(?i)window\\.Shopify\\s*="
+  },
+  {
+    "name": "WordPress",
+    "category": "CMS",
+    "headers": null,
+    "metaGenerator": "(?i)WordPress",
+    "scriptSrc": "(?i)/wp-includes/|/wp-content/",
+    "htmlBody": "(?i)wp-content"
+  },
+  {
+    "name": "WooCommerce",
+    "category": "Ecommerce",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)/wp-content/plugins/woocommerce/",
+    "htmlBody": "(?i)woocommerce-page"
+  },
+  {
+    "name": "React",
+    "category": "JavaScript Libraries",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": null,
+    "htmlBody": "(?i)data-reactroot|_reactListening"
+  },
+  {
+    "name": "Cloudflare",
+    "category": "CDN / Security",
+    "headers": {
+      "Server": "(?i)cloudflare",
+      "CF-RAY": ".*"
+    },
+    "metaGenerator": null,
+    "scriptSrc": null,
+    "htmlBody": null
+  },
+  {
+    "name": "Google Tag Manager",
+    "category": "Analytics",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)googletagmanager\\.com/gtm\\.js",
+    "htmlBody": "(?i)gtm\\.start"
+  }
+]
