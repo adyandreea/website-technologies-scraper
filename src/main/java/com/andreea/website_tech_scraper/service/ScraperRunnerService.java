@@ -26,7 +26,7 @@ public class ScraperRunnerService {
     public List<DomainResultDTO> processAllDomains(List<String> domains, List<TechRuleDTO> rules) {
         List<CompletableFuture<DomainResultDTO>> futures = domains.stream()
                 .map(domain -> CompletableFuture.supplyAsync(() -> detectionService.analyzeDomain(domain, rules), executor))
-                .collect(Collectors.toList());
+                .toList();
 
         return futures.stream()
                 .map(CompletableFuture::join)

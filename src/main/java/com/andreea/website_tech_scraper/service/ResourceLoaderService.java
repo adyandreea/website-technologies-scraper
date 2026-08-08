@@ -23,14 +23,15 @@ public class ResourceLoaderService {
     public List<TechRuleDTO> loadRules(String rulesFileName) throws IOException {
         ClassPathResource resource = new ClassPathResource(rulesFileName);
         try (InputStream is = resource.getInputStream()) {
-            return objectMapper.readValue(is, new TypeReference<List<TechRuleDTO>>() {});
+            return objectMapper.readValue(is, new TypeReference<>() {
+            });
         }
     }
 
     public List<String> loadDomains(String domainsFileName) throws IOException {
         ClassPathResource resource = new ClassPathResource(domainsFileName);
         try (InputStream is = resource.getInputStream()) {
-            List<DomainInputDTO> domainInputs = objectMapper.readValue(is, new TypeReference<List<DomainInputDTO>>() {
+            List<DomainInputDTO> domainInputs = objectMapper.readValue(is, new TypeReference<>() {
             });
 
             return domainInputs.stream()

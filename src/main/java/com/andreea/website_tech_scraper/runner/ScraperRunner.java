@@ -6,6 +6,8 @@ import com.andreea.website_tech_scraper.service.ResourceLoaderService;
 import com.andreea.website_tech_scraper.service.ScraperRunnerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +20,8 @@ import java.util.List;
 @Component
 public class ScraperRunner implements CommandLineRunner {
 
+    private static final Logger log = LoggerFactory.getLogger(ScraperRunner.class);
+
     private final ResourceLoaderService resourceLoaderService;
     private final ScraperRunnerService scraperRunnerService;
 
@@ -28,11 +32,11 @@ public class ScraperRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Loading resources...");
+        log.info("Loading resources...");
         List<TechRuleDTO> rules = resourceLoaderService.loadRules("rules.json");
         List<String> domains = resourceLoaderService.loadDomains("domains.json");
 
-        System.out.println("Starting analysis for " + domains.size() + " domains using " + rules.size() + " rules.");
+        log.info("Starting analysis for {} domains using {} rules.", domains.size(), rules.size());
         long startTime = System.currentTimeMillis();
 
         List<DomainResultDTO> results = scraperRunnerService.processAllDomains(domains, rules);
@@ -43,12 +47,12 @@ public class ScraperRunner implements CommandLineRunner {
                 .mapToInt(DomainResultDTO::getDetectedTechnologiesCount)
                 .sum();
 
-        System.out.println("Scan completed in " + (endTime - startTime) / 1000 + " seconds.");
-        System.out.println("Total technologies detected across all domains: " + totalTechnologiesFound);
+        log.info("Scan completed in {} seconds.", (endTime - startTime) / 1000);
+        log.info("Total technologies detected across all domains: {}", totalTechnologiesFound);
 
         ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
         objectMapper.writeValue(new File("results.json"), results);
 
-        System.out.println("Results written to results.json");
+        log.info("Results written to results.json");
     }
 }
