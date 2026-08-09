@@ -2,8 +2,8 @@ package com.andreea.website_tech_scraper.runner;
 
 import com.andreea.website_tech_scraper.dto.DomainResultDTO;
 import com.andreea.website_tech_scraper.dto.TechRuleDTO;
-import com.andreea.website_tech_scraper.service.ResourceLoaderService;
-import com.andreea.website_tech_scraper.service.ScraperRunnerService;
+import com.andreea.website_tech_scraper.services.ResourceLoaderService;
+import com.andreea.website_tech_scraper.services.ScraperRunnerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.slf4j.Logger;

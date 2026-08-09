@@ -1,4 +1,4 @@
-package com.andreea.website_tech_scraper.service;
+package com.andreea.website_tech_scraper.services;
 
 import com.andreea.website_tech_scraper.dto.*;
 import org.jsoup.Jsoup;
