@@ -35,6 +35,32 @@
     "htmlBody": "(?i)data-reactroot|_reactListening|__NEXT_DATA__"
   },
   {
+    "name": "Vue.js",
+    "category": "JavaScript Frameworks",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)vue(\\.global)?(\\.min)?\\.js",
+    "htmlBody": "(?i)data-v-[a-f0-9]+"
+  },
+  {
+    "name": "Angular",
+    "category": "JavaScript Frameworks",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)angular(\\.min)?\\.js",
+    "htmlBody": "(?i)ng-version|ng-app"
+  },
+  {
+    "name": "Next.js",
+    "category": "Web Frameworks",
+    "headers": {
+      "X-Powered-By": "(?i)Next\\.js"
+    },
+    "metaGenerator": null,
+    "scriptSrc": "(?i)/_next/static/",
+    "htmlBody": "(?i)__NEXT_DATA__"
+  },
+  {
     "name": "Cloudflare",
     "category": "CDN / Security",
     "headers": {
@@ -54,11 +80,67 @@
     "htmlBody": "(?i)gtm\\.start"
   },
   {
+    "name": "Google Analytics",
+    "category": "Analytics",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)(google-analytics\\.com/analytics\\.js|googletagmanager\\.com/gtag/js)",
+    "htmlBody": "(?i)ga\\('create'|gtag\\('config'"
+  },
+  {
+    "name": "Facebook Pixel",
+    "category": "Analytics / Advertising",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)connect\\.facebook\\.net/.*/fbevents\\.js",
+    "htmlBody": "(?i)fbq\\('init'"
+  },
+  {
+    "name": "Hotjar",
+    "category": "Analytics",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)static\\.hotjar\\.com/c/hotjar-",
+    "htmlBody": "(?i)hj\\('identify'"
+  },
+  {
+    "name": "Klaviyo",
+    "category": "Marketing Automation",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)static\\.klaviyo\\.com/onsite/js/klaviyo\\.js",
+    "htmlBody": "(?i)_learnq"
+  },
+  {
+    "name": "HubSpot",
+    "category": "CMS / Marketing",
+    "headers": null,
+    "metaGenerator": "(?i)HubSpot",
+    "scriptSrc": "(?i)js\\.hs-scripts\\.com|js\\.hsanalytics\\.net",
+    "htmlBody": "(?i)hbspt\\.forms"
+  },
+  {
     "name": "jQuery",
     "category": "JavaScript Libraries",
     "headers": null,
     "metaGenerator": null,
     "scriptSrc": "(?i)jquery(-[0-9\\.]+)?(\\.min)?\\.js",
+    "htmlBody": null
+  },
+  {
+    "name": "Lodash",
+    "category": "JavaScript Libraries",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)lodash(\\.min)?\\.js",
+    "htmlBody": null
+  },
+  {
+    "name": "GSAP",
+    "category": "JavaScript Libraries",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)gsap(\\.min)?\\.js|ScrollTrigger(\\.min)?\\.js",
     "htmlBody": null
   },
   {
@@ -68,22 +150,6 @@
     "metaGenerator": "(?i)Elementor",
     "scriptSrc": "(?i)/wp-content/plugins/elementor",
     "htmlBody": "(?i)elementor-element"
-  },
-  {
-    "name": "Bootstrap",
-    "category": "UI Frameworks",
-    "headers": null,
-    "metaGenerator": null,
-    "scriptSrc": "(?i)bootstrap(\\.bundle)?(\\.min)?\\.js",
-    "htmlBody": "(?i)bootstrap(\\.min)?\\.css"
-  },
-  {
-    "name": "Google Analytics",
-    "category": "Analytics",
-    "headers": null,
-    "metaGenerator": null,
-    "scriptSrc": "(?i)(google-analytics\\.com/analytics\\.js|googletagmanager\\.com/gtag/js)",
-    "htmlBody": "(?i)ga\\('create'|gtag\\('config'"
   },
   {
     "name": "WPBakery",
@@ -100,6 +166,22 @@
     "metaGenerator": null,
     "scriptSrc": "(?i)/wp-content/themes/Divi/",
     "htmlBody": "(?i)et_pb_section"
+  },
+  {
+    "name": "Bootstrap",
+    "category": "UI Frameworks",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)bootstrap(\\.bundle)?(\\.min)?\\.js",
+    "htmlBody": "(?i)bootstrap(\\.min)?\\.css"
+  },
+  {
+    "name": "Tailwind CSS",
+    "category": "UI Frameworks",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)tailwindcss",
+    "htmlBody": "(?i)class=\"[^\"]*\\b(flex|grid|bg-[a-z]+-[0-9]+|text-[a-z]+-[0-9]+|px-[0-9]+)\\b"
   },
   {
     "name": "Astra",
@@ -130,8 +212,113 @@
     "category": "Font Scripts",
     "headers": null,
     "metaGenerator": null,
-    "scriptSrc": "(?i)fontawesome|fontawesome-all|fontawesome-shims",
+    "scriptSrc": "(?i)fontawesome|fontawesome-all|fontawesome-shims|kit\\.fontawesome\\.com",
     "htmlBody": "(?i)class=\"[^\"]*\\bfa[srbld]?\\b|font-awesome"
+  },
+  {
+    "name": "Stripe",
+    "category": "Payment Processors",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)js\\.stripe\\.com/v[23]",
+    "htmlBody": "(?i)stripe-button"
+  },
+  {
+    "name": "PayPal",
+    "category": "Payment Processors",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)paypal\\.com/sdk/js|paypalobjects\\.com",
+    "htmlBody": "(?i)paypal-button"
+  },
+  {
+    "name": "Google reCAPTCHA",
+    "category": "Security / Captcha",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)google\\.com/recaptcha/api\\.js|recaptcha/releases",
+    "htmlBody": "(?i)g-recaptcha"
+  },
+  {
+    "name": "Wix",
+    "category": "CMS / Web Builders",
+    "headers": {
+      "X-Wix-Renderer-Server": ".*"
+    },
+    "metaGenerator": "(?i)Wix",
+    "scriptSrc": "(?i)static\\.wixstatic\\.com",
+    "htmlBody": "(?i)wix-site"
+  },
+  {
+    "name": "Squarespace",
+    "category": "CMS / Web Builders",
+    "headers": {
+      "Server": "(?i)Squarespace"
+    },
+    "metaGenerator": "(?i)Squarespace",
+    "scriptSrc": "(?i)static1\\.squarespace\\.com",
+    "htmlBody": "(?i)Squarespace\\.Constants"
+  },
+  {
+    "name": "Webflow",
+    "category": "CMS / Web Builders",
+    "headers": null,
+    "metaGenerator": "(?i)Webflow",
+    "scriptSrc": "(?i)assets\\.website-files\\.com",
+    "htmlBody": "(?i)w-nav|w-dyn-list"
+  },
+  {
+    "name": "Weebly",
+    "category": "CMS / Web Builders",
+    "headers": null,
+    "metaGenerator": "(?i)Weebly",
+    "scriptSrc": "(?i)editmysite\\.com/js",
+    "htmlBody": "(?i)weebly-footer"
+  },
+  {
+    "name": "Magento",
+    "category": "Ecommerce",
+    "headers": {
+      "Set-Cookie": "(?i)mage-messages|frontend_cid"
+    },
+    "metaGenerator": "(?i)Magento",
+    "scriptSrc": "(?i)/mage/|/skin/frontend/",
+    "htmlBody": "(?i)Mage\\.Cookies"
+  },
+  {
+    "name": "Joomla",
+    "category": "CMS",
+    "headers": null,
+    "metaGenerator": "(?i)Joomla",
+    "scriptSrc": "(?i)/media/jui/js/|/media/system/js/",
+    "htmlBody": null
+  },
+  {
+    "name": "Drupal",
+    "category": "CMS",
+    "headers": {
+      "X-Drupal-Cache": ".*",
+      "X-Generator": "(?i)Drupal"
+    },
+    "metaGenerator": "(?i)Drupal",
+    "scriptSrc": "(?i)misc/drupal\\.js|core/assets/vendor/drupal",
+    "htmlBody": "(?i)Drupal\\.settings"
+  },
+  {
+    "name": "Yoast SEO",
+    "category": "SEO",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": null,
+    "htmlBody": "(?i)Yoast SEO plugin"
+  },
+  {
+    "name": "Contact Form 7",
+    "category": "WordPress Plugins",
+    "headers": null,
+    "metaGenerator": null,
+    "scriptSrc": "(?i)/wp-content/plugins/contact-form-7/",
+    "htmlBody": "(?i)wpcf7-form"
   },
   {
     "name": "Nginx",
